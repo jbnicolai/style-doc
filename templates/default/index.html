@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <title>Style Guide</title>
+    <meta name="description" content="" />
+    <meta name="generator" content="styledocer-node" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="external.css" />
+    <script src="jquery.js"></script>
+    <script src="svg-injector.js"></script>
+    <script src="jquery.js"></script>
+    <script src="rainbow.js"></script>
+    <script src="main.js"></script>
+    <% if(customJavaScriptIncludes) { %>
+      <% customJavaScriptIncludes.forEach(function(include) { %>
+        <script src="<%= include %>"></script>
+      <% }) %>
+    <% } %>
+  </head>
+  <body id="styledocer-node">
+    <div class="styledocer-wrapper">
+      <div class="styledocer-sidebar">
+        <div class="styledocer-sidebar-inner">
+          <header class="styledocer-header">
+            <h1 class="styledocer-doc-title"><a href="./">Style Guide</a></h1>
+          </header>
+          <nav class="styledocer-nav">
+            <ul class="styledocer-menu" data-styledocer-ref="<%= currentTopSection %>">
+              <li class="styledocer-menu-item"><a href="./index.html"><span class="styledocer-name">Overview</span></a></li>
+              <% topLevelSections.forEach(function(topSection) { %>
+                <li class="styledocer-menu-item">
+                  <a href="section-<%= topSection.section.toLowerCase().replace(/\s/g, '-') %>.html"><span class="styledocer-name"><%= topSection.title %></span></a>
+                  <% if(topSection.section == currentTopSection && currentSections.length > 1) { %>
+                  <ul class="styledocer-menu-child">
+                    <% currentSections.forEach(function(section, key) { %>
+                      <% if(key > 0) { %>
+                        <li class="styledocer-menu-item<% if(section.mixin) { %> mixin<% } else if(section.placeholder) { %> placholder<% } else if(section.var) { %> variables<% } %>"><a href="#section-<%= section.title.replace(/\s/, '-') %>"><span class="styledocer-name"><%= section.title %><% if(section.mixin || section.placeholder || section.var || section.animation) { %><img src="<% if(section.mixin) { %>media-play.svg<% } else if(section.placeholder) { %>beaker.svg<% } else if(section.var) { %>tags.svg<% } else if(section.animation) { %>aperture.svg<% } %>" /><% } %></span></a></li>
+                      <% } %>
+                    <% }) %>
+                  </ul>
+                  <% } %>
+                </li>
+              <% }) %>
+            </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="styledocer-content">
+        <article class="styledocer-article">
+          <% currentSections.forEach(function(section, key) { %>
+            <section id="section-<%= section.title.replace(/\s/, '-') %>" class="styledocer-section<% if(key == 0) { %> first<% } %>">
+              <h1 class="styledocer-title"><% if(section.mixin || section.placeholder || section.var || section.animation) { %><img src="<% if(section.mixin) { %>media-play.svg<% } else if(section.placeholder) { %>beaker.svg<% } else if(section.var) { %>tags.svg<% } else if(section.animation) { %>aperture.svg<% } %>" /><% } %><%= section.title %></h1>
+              <div class="styledocer-description">
+                <%= section.description %>
+              </div>
+              <% if(section.var && section.var.length > 0) { %>
+                <ul class="styledocer-variables">
+                  <% section.var.forEach(function(variable) { %>
+                    <li class="<%= variable.type %>">
+                      <span class="name"><%= variable.name %></span>
+                      <% if(variable.type === 'color') { %>
+                        <span class="value" style="background-color: <%= variable.value %>; border: 1px solid black;">&nbsp;</span>
+                      <% } else { %>
+                        <span class="value"><%= variable.value %></span>
+                      <% } %>
+                    </li>
+                  <% }) %>
+                </ul>
+              <% } %>
+              <% if(section.mixin) { %>
+                <div class="styledocer-mixin">
+                  <div class="signature"><%= section.mixin %>(<% if(section.param && section.param.length > 0) { section.param.forEach(function(parameter) { %><span class="type"><%= parameter.type %></span> <span class="name"><%= parameter.name %></span><% });} %>)</div>
+                </div>
+              <% } %>
+            </section>
+          <% }) %>
+        </article>
+        <footer class="styledocer-footer">
+          <span>Created using <a href="https://github.com/ryanzec/style-doc">style-doc</a></span>
+          <span>Default theme based off of <a href="https://github.com/htanjo/kss-node-template">kss-node-template</a></span>
+          <span>SVG icons from <a href="https://github.com/iconic/open-iconic">Iconic Open</a> using <a href="">SVGInjector</a></span>
+        </footer>
+      </div>
+    </div>
+  </body>
+</html>

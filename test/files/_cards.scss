@@ -1,0 +1,82 @@
+/**
+ * @section Cards
+ *
+ * A card is a generic content container that can content a header and content section
+ *
+ * ```html
+ * <div class="card">
+ *   <header>Title</header>
+ *   <div class="content">
+ *     Some content for this card
+ *   </div>
+ * </div>
+ * ```
+ *
+ * A card is a generic content container that can content a header and content section
+ *
+ * ```html
+ * <div class="card">
+ *   <header>Title</header>
+ *   <div class="content">
+ *     Some content for this card
+ *   </div>
+ * </div>
+ * ```
+ */
+.card {
+  position: relative;
+  display: inline-block;
+  margin: 15px 0;
+  border-radius: 3px;
+  border: 1px solid $color-gray;
+  background-color: $color-gallery;
+
+  /**
+   * @section Cards
+   * @subsection Header
+   *
+   * You can add the header tag to give your content box a title bar
+   *
+   * ```html
+   * <div class="card with-arrow">
+   *   <header>Title</header>
+   *   <div class="content">
+   *     Some content for this card
+   *   </div>
+   * </div>
+   * ```
+   */
+
+  header {
+    //@include clearfix;
+    border-radius: 3px;
+    color: $color-chetwode-blue;
+    font-weight: 600;
+    padding: 8px;
+
+    &.border {
+      border-bottom: 1px solid $color-tundora;
+      border-radius: 3px 3px 0 0;
+    }
+
+    ~ .content {
+      border-radius: 0 0 3px 3px;
+    }
+
+    > .button-drop-down.actions,
+    > .close {
+      font-size: 1rem;
+      float: right;
+      cursor: pointer;
+      text-transform: uppercase;
+      position: relative;
+      top: 2px;
+    }
+  }
+
+  .content {
+    border-radius: 3px;
+    background-color: $color-white;
+    padding: 8px;
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "name": "style-doc",
+  "version": "0.1.0",
+  "description": "A style guide generator",
+  "keywords": [
+    "doc",
+    "docs",
+    "documentation",
+    "css",
+    "sass",
+    "less",
+    "style",
+    "styleguide",
+    "generator"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ryanzec/style-doc"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanzec/style-doc/issues"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ryan Zec",
+    "email": "code@ryanzec.com",
+    "url": "http://www.ryanzec.com"
+  },
+  "dependencies": {
+    "marked": "0.3.2",
+    "del": "0.1.1",
+    "mkdirp": "0.5.0",
+    "glob-array": "0.1.2",
+    "lodash": "2.4.1",
+    "onecolor": "2.4.1",
+    "chalk": "0.5.1",
+    "asyncblock": "2.1.12",
+    "bluebird": "2.2.2",
+    "doc-block-parser": "0.2.0",
+    "ncp": "0.6.0"
+  },
+  "devDependencies": {
+    "mocha": "1.18.2",
+    "chai": "1.9.1",
+    "sinon": "1.9.1"
+  },
+  "engines": {
+    "node": ">=0.10.25"
+  },
+  "main": "lib/index.js",
+  "bin": {
+    "style-doc": "./lib/index.js"
+  }
+}

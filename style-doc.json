@@ -1,0 +1,13 @@
+{
+  "source": [
+    "test/files/*.scss"
+  ],
+  "overview": "test/files/styleguide.md",
+  "externalStyles": [{
+    "type": "css",
+    "file": "test/files/test.css"
+  }, {
+    "type": "sass",
+    "file": "test/files/test.scss"
+  }]
+}

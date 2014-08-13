@@ -1,0 +1,32 @@
+/**
+ * @section Animations
+ *
+ * This is the collection of the animations that are defined.
+ */
+
+/**
+ * @section Animations
+ * @subsection Fade In
+ * @animation fadeIn
+ *
+ * This will fade the element's `opacity` from `0` to `1` evenly.
+ */
+@-webkit-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-moz-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@-o-keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}
+
+@keyframes fadeIn {
+  0% {opacity: 0;}
+  100% {opacity: 1;}
+}

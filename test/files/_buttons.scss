@@ -1,0 +1,154 @@
+/*
+ * this should not be processed
+ */
+@mixin button-size($size: normal) {
+  @if $size == small {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 3px 9px;
+  }
+  @if $size == normal {
+    padding: 4px 12px;
+  }
+  @if $size == large {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    padding: 5px 15px;
+  }
+  @if $size == largest {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    padding: 6px 18px;
+  }
+  @if $size == drop-down-small {
+    font-size: 1rem;
+    line-height: 1rem;
+    padding: 3px 9px 4px 9px;
+  }
+  @if $size == drop-down-normal {
+    padding: 4px 12px 5px 12px;
+  }
+  @if $size == drop-down-large {
+    font-size: 1.8rem;
+    line-height: 1.8rem;
+    padding: 5px 15px 6px 15px;
+  }
+  @if $size == drop-down-largest {
+    font-size: 2.4rem;
+    line-height: 2.4rem;
+    padding: 6px 18px 7px 18px;
+  }
+}
+
+@mixin button-color($button-regular-color, $button-light-color, $button-dark-color, $button-text-color) {
+  &.quiet {
+    color: $color-tundora;
+  }
+
+  &:not(.quiet) {
+    color: $button-text-color;
+    background-color: $button-regular-color;
+  }
+
+  &:hover {
+    &:not([disabled]) {
+      &:not(.solid-color) {
+        background-color: $button-light-color;
+      }
+    }
+  }
+
+  &:active, &.is-active {
+    &:not([disabled]) {
+      &:not(.solid-color) {
+        background-color: $button-dark-color;
+      }
+    }
+  }
+}
+
+/**
+ * @section Buttons
+ * @subsection Button Color Auto
+ *
+ * This mixin is a shortcut to button color mixin that automatically create different background colors
+ *
+ * @mixin button-color-auto
+ * @param $button-main-color color Button main background color
+ * @param $button-text-color color Button text color
+ */
+@mixin button-color-auto($button-main-color, $button-text-color) {
+  @include button-color($button-main-color, lighten($button-main-color, 5%), darken($button-main-color, 5%), $button-text-color);
+}
+
+/**
+ * @section Buttons
+ *
+ * Buttons!!!
+ *
+ * ```html
+ * <button>Default</button>
+ * <button class="primary">Primary</button>
+ * <button class="caution">Caution</button>
+ * <button class="danger">Danger</button>
+ * <button class="safe">Safe</button>
+ * <button disabled>Disabled</button>
+ * <button class="border">Border</button>
+ * <button class="square">Square</button>
+ * <button class="small">Small</button>
+ * <button class="large">Large</button>
+ * <button class="largest">Largest</button>
+ * ```
+ */
+button {
+  @include button-size(normal);
+  @include button-color-auto($color-silver-chalice, $color-white);
+
+  border-radius: 3px;
+  position: relative;
+  border: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  cursor: pointer;
+
+  &.small {
+    @include button-size(small);
+  }
+
+  &.large {
+    @include button-size(large);
+  }
+
+  &.largest {
+    @include button-size(largest);
+  }
+
+  &.primary {
+    @include button-color-auto($color-chetwode-blue, $color-white);
+  }
+
+  &.caution {
+    @include button-color-auto($color-rio-grande, $color-white);
+  }
+
+  &.danger {
+    @include button-color-auto($color-medium-carmine, $color-white);
+  }
+
+  &.safe {
+    @include button-color-auto($color-apple, $color-white);
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+
+  &.border {
+    border: 1px solid $color-black;
+  }
+
+  &.square {
+    border-radius: 0;
+  }
+}

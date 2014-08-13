@@ -1,0 +1,161 @@
+/**
+ * @section Variables
+ *
+ * There are a number of pre-defined global variables that you can use
+ */
+/**
+ * @section Variables
+ * @subsection Colors
+ *
+ * These are the only color that should be used within the application
+ *
+ * @var $color-rosewood
+ * @var $color-rosewood
+ * @var $color-maroon
+ * @var $color-medium-carmine
+ * @var $color-dawn-pink
+ * @var $color-crusoe
+ * @var $color-japanese-laurel
+ * @var $color-apple
+ * @var $color-panache
+ * @var $color-downriver
+ * @var $color-dark-blue
+ * @var $color-san-marino
+ * @var $color-chetwode-blue
+ * @var $color-snuff
+ * @var $color-olive
+ * @var $color-rio-grande
+ * @var $color-yellow
+ * @var $color-portafino
+ * @var $color-black
+ * @var $color-tundora
+ * @var $color-gray
+ * @var $color-silver-chalice
+ * @var $color-silver
+ * @var $color-silver-d20
+ */
+$color-rosewood: hsla(2.2, 100.0%, 16.1%, 1.0);
+$color-maroon: hsla(1.0, 100.0%, 23.9%, 1.0);
+$color-medium-carmine: hsla(1.0, 51.7%, 45.5%, 1.0);
+$color-dawn-pink: hsla(2.6,49.3%,72.2%,1.0);
+$color-crusoe: hsla(117.8, 100.0%, 16.1%, 1.0);
+$color-japanese-laurel: hsla(120.5, 100.0%, 24.7%, 1.0);
+$color-apple: hsla(117.0, 51.7%, 45.5%, 1.0);
+$color-panache: hsla(120.0, 40.5%, 92.7%, 1.0);
+$color-downriver: rgba(9, 24, 80, 1.0);
+$color-dark-blue: hsla(239.3, 100.0%, 33.5%, 1.0);
+$color-san-marino: hsla(226.7, 47.3%, 46.9%, 1.0);
+$color-chetwode-blue: hsla(223.1, 54.1%, 69.2%, 1.0);
+$color-snuff: hsla(240.0, 40.5%, 92.7%, 1.0);
+$color-olive: hsla(60.0, 100.0%, 24.7%, 1.0);
+$color-rio-grande: rgba(207, 207, 0, 1.0);
+$color-yellow: hsla(60.0, 100.0%, 50.0%, 1.0);
+$color-portafino: hsla(60.8, 100.0%, 85.3%, 1.0);
+$color-black: hsla(0.0, 0.0%, 0.0%, 1.0);
+$color-tundora: hsla(0.0, 0.0%, 25.5%, 1.0);
+$color-gray: rgba(133, 133, 133, 1.0);
+$color-silver-chalice: hsla(0.0, 0.0%, 66.7%, 1.0);
+$color-silver: hsla(0.0, 0.0%, 80.4%, 1.0);
+$color-silver-d20: darken($color-silver, 20%);
+
+/**
+ * Testing adding multiple vars to the previous section works
+ *
+ * @var $color-gallery
+ * @var $color-white
+ */
+$color-gallery: hsla(0.0, 0.0%, 93.7%, 1.0);
+$color-white: hsla(0.0, 0.0%, 100.0%, 1.0);
+
+/**
+ * Testing adding single vars to the previous section works
+ *
+ * @var $color-white-d15
+ */
+$color-white-d15: darken($color-white, 15%);
+
+/**
+ * @section Variables
+ * @subsection Percentages
+ *
+ * These are the standard percentages we use
+ * @var $percentage-dark
+ * @var $percentage-darker
+ * @var $percentage-darkest
+ * @var $percentage-light
+ * @var $percentage-lighter
+ * @var $percentagelightest
+ */
+$percentage-dark: 5%;
+$percentage-darker: 10%;
+$percentage-darkest: 15%;
+$percentage-light: 5%;
+$percentage-lighter: 10%;
+$percentagelightest: 15%;
+
+/**
+ * @section Variables
+ * @subsection Fonts
+ *
+ * These are our default font values
+ *
+ * @var $font-size
+ * @var $font-family
+ */
+$font-size: 1.3rem;
+$font-family: sans-serif;
+
+//neat variables
+$max-width: 100%;
+
+/**
+ * @section Variables
+ * @subsection Nag Icon Font
+ *
+ * This is a placeholder to extend for elements that are going to display icon fonts
+ *
+ * ```sass
+ * .icon {
+ *   @extend %nag-icon-font;
+ * }
+ * ```
+ *
+ * @placeholder nag-icon-font
+ */
+%nag-icon-font {
+  font-family: 'nag-icon-font';
+  font-style: normal;
+  speak: none;
+  font-weight: normal;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  display: inline-block;
+}
+
+//this will make sure the section that are defined in multiple files are group properly in the generated style guide
+/**
+ * @section Animations
+ * @subsection Fade Out
+ * @animation fadeOut
+ *
+ * This will fade the element's `opacity` from `1` to `0` evenly, also adds `display: none` at the end of the animation.
+ */
+@-webkit-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;display: none;}
+}
+
+@-moz-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;display: none;}
+}
+
+@-o-keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;display: none;}
+}
+
+@keyframes fadeOut {
+  0% {opacity: 1;}
+  100% {opacity: 0;display: none;}
+}
