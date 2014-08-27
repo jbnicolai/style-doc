@@ -36,7 +36,7 @@ would be precessed but this:
 
 would not.
 
-More documentation to come later.  Take a look at the test folder which has example doc blocks.
+More documentation to come later.  Take a look at the test folder which has example doc blocks that are parsed.
 
 # License
 
