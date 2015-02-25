@@ -33,7 +33,7 @@
     "glob-array": "0.1.2",
     "lodash": "2.4.1",
     "onecolor": "2.4.1",
-    "chalk": "0.5.1",
+    "chalk": "1.0.0",
     "asyncblock": "2.1.12",
     "bluebird": "2.2.2",
     "doc-block-parser": "0.2.0",
